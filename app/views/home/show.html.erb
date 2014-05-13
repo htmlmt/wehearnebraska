@@ -1,0 +1,80 @@
+<div id="backdrop"> 
+  <div id="diag_backdrop">
+    <div id="container">
+      <nav>
+        <div id="call_to_action"><a href="http://hearnebraska.org/donate">Tell the world to listen. Donate to Hear Nebraska.</a></div>
+        <div id="dates_container">
+          <div id="dates">
+            <div id="omaha">
+              <a href="http://omahagives24.org/#npo/hear-nebraska" target="_blank">
+                <h2 id="omaha_date">MAY 21</h2>
+                <h3 id="omaha_name">Omaha Gives</h3>
+              </a>
+            </div>
+            <div id="logo">
+              <a href="/">
+                <img src="https://s3.amazonaws.com/WeHearNebraska/hn-logo-white.png" alt="logo"/>
+              </a>
+            </div>
+            <div id="lnk">
+              <a href="http://givetolincoln.razoo.com/story/Hearnebraska" target="_blank">
+                <h2 id="lnk_date">MAY 29</h2>
+                <h3 id="lnk_name">Give to Lincoln</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="tweets_input_container">
+          <div id="tweets_input">
+            <div id="signin">
+              <% if current_user %>
+                Signed in as <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              <% end %>
+            </div>
+            <h1 id="question"><em>What's cool about Nebraska?</em></h1>
+            <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
+            <div id="i_hear">
+              <label> I hear Nebraska
+                <%= f.text_field :message, :placeholder => "...", :title => "I hear Nebraska ", :tag => " Spread the word: wehearnebraska.org. #WeHearNebraska", :value => "#{@message}" %>
+              </label>
+            </div>
+              <% if current_user %>
+                <%= f.submit "SUBMIT", :id => "submit" %>
+              <% else %>
+                <%= link_to "SUBMIT", "/auth/twitter", id: "sign_in" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </nav>
+      <div id="tweets">
+        
+      </div>
+      <div id="see_more">
+        ▼ SEE MORE ▼
+      </div>
+      <div id="dates_container">
+        <div id="dates">
+          <div id="omaha">
+            <a href="http://omahagives24.org/#npo/hear-nebraska" target="_blank">
+              <h2 id="omaha_date">MAY 21</h2>
+              <h3 id="omaha_name">Omaha Gives</h3>
+            </a>
+          </div>
+          <div id="logo">
+            <a href="/">
+              <img src="https://s3.amazonaws.com/WeHearNebraska/hn-logo-white.png" alt="logo"/>
+            </a>
+          </div>
+          <div id="lnk">
+            <a href="http://givetolincoln.razoo.com/story/Hearnebraska" target="_blank">
+              <h2 id="lnk_date">MAY 29</h2>
+              <h3 id="lnk_name">Give to Lincoln</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,293 @@
+@media all and (max-width: 830px) {
+  #i_hear {
+    font-size: 6vw;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 25px 10px;
+  }
+}
+
+@media all and (min-width: 831px) {
+  #i_hear {
+    height: 42px;
+    font-size: 17px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 20px;
+    width: 72%;
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+
+@media all and (max-width: 670px) {
+  input[name="tweet[message]"] {
+    width: 100%;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+  }
+  
+  #omaha_date, #lnk_date {
+    font-size: 6vw;
+  }
+  
+  #call_to_action {
+    font-size: 3.6vw;
+    padding: 5px;
+  }
+  
+  #diag_backdrop {
+    padding: 0;
+  }
+  
+  #omaha_name, #lnk_name {
+    font-size: 4vw;
+  }
+  
+  #dates {
+    width: 90%;
+  }
+  
+  input[name="tweet[message]"] {
+    height: 50px;
+  }
+  
+  #logo {
+    width: 24%;
+    margin-left: 0%;
+  }
+  
+  #lnk {
+    float: right;
+  }
+  
+  #tweets_input {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 671px) {
+  input[name="tweet[message]"] {
+    width: 60%;
+  }
+  
+  label {
+    padding-left: 10px;
+  }
+  
+  #call_to_action {
+    padding: 15px;
+    font-size: 20px;
+  }
+  
+  #diag_backdrop {
+    padding: 0 25px 25px 25px;
+  }
+  
+  #omaha_date, #lnk_date {
+    font-size: 40px;
+  }
+  
+  #omaha_name, #lnk_name {
+    font-size: 23px;
+  }
+  
+  #logo {
+    width: 115px;
+  }
+  
+  #dates {
+    width: 500px;
+  }
+  
+  #tweets_input {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 950px) {
+  #question {
+    font-size: 6vw;
+  }
+}
+
+@media all and (min-width: 951px) {
+  #question {
+    font-size: 48px;
+  }
+}
+
+  body {
+    background: #e6e7e8;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  input {
+    border: 0;
+    border-radius: 20px;
+    padding: 5px 25px;
+  }
+
+  input:focus {
+    outline: none
+  }
+
+  input[name="tweet[message]"] {
+    padding: 0;
+    font-size: 17px;
+    color: #888;
+    font: inherit;
+  }
+
+  input[type="submit"], #sign_in {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    align-items: flex-start;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 20px;
+    background: #681d03;
+    display: inline-block;
+  }
+
+  input[type="submit"]:hover, #sign_in:hover {
+    color: #f15a29;
+  }
+
+  label {
+    color: #888;
+  }
+
+  nav {
+  
+  }
+
+  #call_to_action, #call_to_action a {
+    background: #fff;
+    color: #f15a29;
+    text-align: center;
+    font-weight: 100;
+    text-decoration: none;
+  }
+
+  #container {
+    max-width: 950px;
+  }
+
+  #dates {
+    margin: 0 auto;
+    padding: 13px;
+  }
+
+  #dates_container {
+    background: #681d03;
+    width: 100%;
+  }
+
+  #diag_backdrop {
+    -moz-box-shadow: 0 0 35px rgba(0, 0, 0, 0.3); 
+    -webkit-box-shadow: 0 0 35px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.3); 
+    background: url("https://s3.amazonaws.com/WeHearNebraska/diag.png") repeat 50% 0; 
+    overflow: hidden; 
+    *zoom: 1; 
+    max-width: 950px; 
+    margin: 0 auto; 
+  }
+  
+  #i_hear {
+    margin-bottom: 20px;
+  }
+
+  #lnk {
+    display: inline-block;
+    margin-left: 5%;
+  }
+
+  #lnk_date {
+    color: #f15a29;
+  }
+
+  #lnk_name, #omaha_name {
+    color: #fff;
+    font-weight: 100;
+  }
+
+  #logo {
+    display: inline-block;
+  }
+
+  #omaha {
+    display: inline-block;
+    margin-right: 5%;
+  }
+
+  #omaha_date {
+    color: #f15a29;
+  }
+
+  #question {
+    color: #fff;
+    font-family: "adobe-caslon-pro";
+  }
+
+  #see_more {
+    color: #fff;
+    background: #f15a29;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  #see_more:hover {
+    background: #681d03;
+  }
+
+  #tweets {
+    padding: 25px 0;
+  }
+
+  #tweets_input {
+    margin: 0 auto;
+    padding: 25px;
+  }
+
+  #tweets_input_container {
+    background: #f15a29;
+  }
+  
+  #signin {
+    display: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
