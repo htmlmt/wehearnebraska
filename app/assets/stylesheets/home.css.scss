@@ -1,4 +1,15 @@
 @media all and (max-width: 830px) {
+  #tweet_text {
+    padding-left: 5%;
+  }
+  
+  #tweets {
+    padding: 5px;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+  
   #i_hear {
     font-size: 6vw;
     background: #fff;
@@ -8,6 +19,17 @@
 }
 
 @media all and (min-width: 831px) {
+  #tweet_text {
+    padding-left: 111px;
+  }
+  
+  #tweets {
+    padding: 25px;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+  
   #i_hear {
     height: 42px;
     font-size: 17px;
@@ -21,6 +43,10 @@
 }
 
 @media all and (max-width: 670px) {
+  #tweet_profile_image img {
+    display: none;
+  }
+  
   input[name="tweet[message]"] {
     width: 100%;
   }
@@ -69,6 +95,7 @@
 }
 
 @media all and (min-width: 671px) {
+  
   input[name="tweet[message]"] {
     width: 60%;
   }
@@ -305,17 +332,6 @@
 
   #see_more:hover {
     background: #681d03;
-  }
-
-  #tweets {
-    padding: 25px;
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
-  }
-  
-  #tweet_text {
-    padding-left: 111px;
   }
 
   #tweets_input {
