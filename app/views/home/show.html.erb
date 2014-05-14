@@ -49,11 +49,21 @@
         </div>
       </nav>
       <div id="tweets">
-        
+        <% $twitter.favorites("hearnebraska", :result_type => "recent").take(10).each do |tweet| %>
+        <div id="tweet">
+          <div id="tweet_profile_image">
+            <a href="http://twitter.com/<%= tweet.user.screen_name %>" target="_blank"><img src="<%= tweet.user.profile_image_uri(size = :bigger) %>" width="20px" alt="profile_image"/></a>
+          </div>
+          <div id="tweet_text">
+          <h4><%= tweet.user.name %>&nbsp;&nbsp; <a href="http://twitter.com/<%= tweet.user.screen_name %>"><div id="handle"><em>@<%= tweet.user.screen_name %></em></div></a></h4>
+          <p><%= tweet.text %></p>
+        </div>
       </div>
-      <div id="see_more">
+        <% end %>
+        </div>
+      <!-- <div id="see_more">
         ▼ SEE MORE ▼
-      </div>
+      </div> -->
       <div id="dates_container">
         <div id="dates">
           <div id="omaha">
