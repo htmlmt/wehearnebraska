@@ -18,13 +18,14 @@
     font-size: 6vw;
     background: #fff;
     border-radius: 20px;
-    padding: 25px 25px 10px;
+    padding: 25px;
   }
 }
 
 @media all and (min-width: 831px) {
   #tweet_text {
     padding-left: 111px;
+    padding-bottom: 20px;
   }
   
   #tweets {
@@ -47,6 +48,10 @@
 }
 
 @media all and (max-width: 670px) {
+  #sign_in {
+    width: 100%;
+  }
+  
   #tweet_profile_image img {
     display: none;
   }
@@ -169,10 +174,22 @@
     font-weight: 500;
     margin-bottom: 0;
     margin-top: 15px;
+    display: inline-block;
+  }
+  
+  h5 {
+    font-family: "source-sans-pro";
+    color: #aaa;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 5px;
+    display: inline-block;
   }
   
   p {
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 18px;
   }
   
@@ -193,6 +210,10 @@
     float: left;
   }
   
+  #actions {
+    margin-top: 5px;
+  }
+  
   #tweet {
     background: #fff;
     box-shadow: -3px 7px 7px rgba(0, 0, 0, 0.3);
@@ -203,6 +224,7 @@
     margin-bottom: 25px;
     display: inline-block;
     padding-right: 10px;
+    padding-bottom: 10px;
   }
   
   img {
@@ -336,6 +358,13 @@
 
   #see_more:hover {
     background: #681d03;
+  }
+  
+  #retweet_icon, #favorite_icon {
+    width: 16px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
   }
 
   #tweets_input {
