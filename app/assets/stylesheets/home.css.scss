@@ -260,7 +260,7 @@
     cursor: pointer;
   }
 
-  input[type="submit"], #sign_in {
+  input[type="submit"], #sign_in, #another_note, #schedule_donation {
     font-family: 'Source Sans Pro', sans-serif;
     color: #fff;
     letter-spacing: normal;
@@ -280,6 +280,15 @@
     background: #681d03;
     display: inline-block;
   }
+  
+  #another_note {
+    margin-right: 20px;
+  }
+  
+  #sent_actions {
+    width: 440px;
+    margin: 0 auto;
+  }
 
   input[type="submit"]:hover, #sign_in:hover {
     color: #f15a29;
@@ -287,6 +296,15 @@
 
   label {
     color: #888;
+  }
+  
+  #another_note a, #schedule_donation a {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  #another_note a:hover, #schedule_donation a:hover {
+    color: #f15a29;
   }
 
   #call_to_action, #call_to_action a {
@@ -296,6 +314,22 @@
     font-weight: 100;
     text-decoration: none;
   }
+  
+  #sent_message {
+    padding: 50px;
+  }
+  
+  #sent_first {
+    color: #fff;
+    text-align: center;
+  }
+  
+  #sent_second {
+    color: #fff;
+    text-align: center;
+    font-size: 33px;
+    font-family: "adobe-caslon-pro";
+  }
 
   #container {
     max-width: 950px;
@@ -304,6 +338,10 @@
   #dates {
     margin: 0 auto;
     padding: 13px;
+  }
+  
+  #handle:hover {
+    text-decoration: underline;
   }
 
   #dates_container {
@@ -381,7 +419,7 @@
 
   #tweets_input {
     margin: 0 auto;
-    padding: 25px;
+    padding: 25px 25px 25px 60px;
   }
 
   #tweets_input_container {

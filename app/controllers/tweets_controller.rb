@@ -6,9 +6,9 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if current_user
         current_user.tweet(twitter_params[:message])
-        format.html { redirect_to :root, notice: 'Tweet sent.' }
+        format.html { redirect_to :sent }
       else
-        format.html { redirect_to :root }
+        format.html { redirect_to :sent }
       end
     end
   end

@@ -1,0 +1,87 @@
+<div id="backdrop"> 
+  <div id="diag_backdrop">
+    <div id="container">
+      <nav>
+        <div id="call_to_action"><a href="http://hearnebraska.org/donate">Tell the world to listen. Donate to Hear Nebraska.</a></div>
+        <div id="dates_container">
+          <div id="dates">
+            <div id="omaha">
+              <a href="http://omahagives24.org/#npo/hear-nebraska" target="_blank">
+                <h2 id="omaha_date">MAY 21</h2>
+                <h3 id="omaha_name">Omaha Gives</h3>
+              </a>
+            </div>
+            <div id="logo">
+              <a href="/">
+                <img src="https://s3.amazonaws.com/WeHearNebraska/hn-logo-white.png" alt="logo"/>
+              </a>
+            </div>
+            <div id="lnk">
+              <a href="http://givetolincoln.razoo.com/story/Hearnebraska" target="_blank">
+                <h2 id="lnk_date">MAY 29</h2>
+                <h3 id="lnk_name">Give to Lincoln</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="tweets_input_container">
+          <div id="sent_message">
+            <h3 id="sent_first">Tweet sent. Thank you for spreading the word.</h3>
+            <h3 id="sent_second"><em>Please continue to help the cause:</em></h3>
+            <div id="sent_actions">
+              <div id="another_note">
+                <a href="/">WRITE ANOTHER NOTE</a>
+              </div>
+              <div id="schedule_donation">
+                <a href="http://givetolincoln.razoo.com/story/Hearnebraska">SCHEDULE DONATION</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="tweets">
+        <% $twitter.favorites("hearnebraska", :result_type => "recent").take(10).each do |tweet| %>
+        <div id="tweet">
+          <div id="tweet_profile_image">
+            <a href="http://twitter.com/<%= tweet.user.screen_name %>" target="_blank"><img src="<%= tweet.user.profile_image_uri(size = :bigger) %>" width="20px" alt="profile_image"/></a>
+          </div>
+          <div id="tweet_text">
+          <h4><%= tweet.user.name %>&nbsp;&nbsp; <a href="http://twitter.com/<%= tweet.user.screen_name %>"><div id="handle"><em>@<%= tweet.user.screen_name %></em></div></a></h4>
+          <p><%= tweet.text %></p>
+          <% if current_user %>
+          <div id="actions">
+            <div id="retweet_icon"><img src="https://si0.twimg.com/images/dev/cms/intents/icons/retweet.png"/></div><h5>&nbsp;&nbsp;Retweet&nbsp;&nbsp;</h5>
+            <div id="favorite_icon"><img src="https://si0.twimg.com/images/dev/cms/intents/icons/favorite.png"></div><h5>&nbsp;&nbsp;Favorite&nbsp;&nbsp;</h5>
+          </div>
+          <% end %>
+        </div>
+      </div>
+        <% end %>
+        </div>
+      <div id="see_more">
+        ▼ SEE MORE ▼
+      </div>
+      <div id="dates_container">
+        <div id="dates">
+          <div id="omaha">
+            <a href="http://omahagives24.org/#npo/hear-nebraska" target="_blank">
+              <h2 id="omaha_date">MAY 21</h2>
+              <h3 id="omaha_name">Omaha Gives</h3>
+            </a>
+          </div>
+          <div id="logo">
+            <a href="/">
+              <img src="https://s3.amazonaws.com/WeHearNebraska/hn-logo-white.png" alt="logo"/>
+            </a>
+          </div>
+          <div id="lnk">
+            <a href="http://givetolincoln.razoo.com/story/Hearnebraska" target="_blank">
+              <h2 id="lnk_date">MAY 29</h2>
+              <h3 id="lnk_name">Give to Lincoln</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

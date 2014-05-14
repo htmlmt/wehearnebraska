@@ -2,6 +2,8 @@ WeHearNebraska::Application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   
+  get 'sent', to: 'home#sent', as: 'sent'
+  
   get 'signout', to: 'sessions#destroy', as: 'signout'
   resources :tweets, only: [:new, :create]
   resources :sessions, only: [:create, :destroy]
