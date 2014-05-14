@@ -197,6 +197,14 @@
     text-decoration: none;
   }
   
+  label a {
+    color: #888;
+  }
+  
+  label a:hover {
+    text-decoration: underline;
+  }
+  
   #handle {
     font-family: "adobe-caslon-pro";
     color: #f15a29;
@@ -246,6 +254,10 @@
     font-size: 17px;
     color: #888;
     font: inherit;
+  }
+  
+  #actions {
+    cursor: pointer;
   }
 
   input[type="submit"], #sign_in {
