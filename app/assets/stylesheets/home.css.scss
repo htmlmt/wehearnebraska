@@ -259,6 +259,11 @@
   #actions {
     cursor: pointer;
   }
+  
+  input[type="submit"] {
+    position: relative;
+    bottom: 2px;
+  }
 
   input[type="submit"], #sign_in, #another_note, #schedule_donation {
     font-family: 'Source Sans Pro', sans-serif;
@@ -293,17 +298,21 @@
   input[type="submit"]:hover, #sign_in:hover {
     color: #f15a29;
   }
+  
+  #chars {
+    color: #888;
+  }
 
   label {
     color: #888;
   }
   
-  #another_note a, #schedule_donation a {
+  #sent_actions a {
     color: #fff;
     font-weight: 600;
   }
   
-  #another_note a:hover, #schedule_donation a:hover {
+  #sent_actions a:hover {
     color: #f15a29;
   }
 
