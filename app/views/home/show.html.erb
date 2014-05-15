@@ -49,7 +49,7 @@
             </div>
             <% end %>
               <% if current_user %>
-                <%= f.submit "SUBMIT", :id => "submit" %>
+                <%= f.submit "TWEET", :id => "submit" %>
               <% else %>
                 <%= link_to "LOGIN", "/auth/twitter", id: "sign_in" %>
               <% end %>
@@ -58,8 +58,9 @@
         </div>
       </nav>
       <div id="tweets">
-        <% $twitter.favorites("hearnebraska", :result_type => "recent").take(10).each do |tweet| %>
-        <div id="tweet">
+        
+        <% @tweets.each do |tweet| %>
+        <div id="tweet" class="twit">
           <div id="tweet_profile_image">
             <a href="http://twitter.com/<%= tweet.user.screen_name %>" target="_blank"><img src="<%= tweet.user.profile_image_uri(size = :bigger) %>" width="20px" alt="profile_image"/></a>
           </div>
@@ -76,9 +77,6 @@
       </div>
         <% end %>
         </div>
-      <div id="see_more">
-        ▼ SEE MORE ▼
-      </div>
       <div id="dates_container">
         <div id="dates">
           <div id="omaha">

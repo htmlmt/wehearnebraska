@@ -5,7 +5,16 @@ $(document).ready(function() {
     chars.innerHTML = (67 - inp.value.length);
   }
   
-  $('#submit').click(function () {
+  window.onload = function() {
+    var url = RegExp('(http:\/\/t.co\/)[a-zA-Z0-9\-\.]{10}')
+    var replacement = document.body.innerHTML.replace(url, "");
+    document.body.innerHTML = replacement
+    
+    var finalReplacement = document.body.innerHTML.replace(/ Spread the word: . #WeHearNebraska/g, "");
+    document.body.innerHTML = finalReplacement
+  }
+  
+  $('#submit').on("click", function () {
     $('input[name="tweet[message]"]').map(function () {
       $(this).val($(this).attr('title') + $(this).val() + $(this).attr('tag'));
       $(this).hide();
