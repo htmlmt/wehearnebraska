@@ -1,17 +1,10 @@
 $(document).ready(function() {
-  var inp = document.getElementById('myinput');
-  var chars = document.getElementById('chars');
-  inp.onkeyup = function() {
-    chars.innerHTML = (67 - inp.value.length);
-  }
-  
-  window.onload = function() {
-    var url = RegExp('(http:\/\/t.co\/)[a-zA-Z0-9\-\.]{10}')
-    var replacement = document.body.innerHTML.replace(url, "");
-    document.body.innerHTML = replacement
-    
-    var finalReplacement = document.body.innerHTML.replace(/ Spread the word: . #WeHearNebraska/g, "");
-    document.body.innerHTML = finalReplacement
+  document.onkeydown = function() {
+    var inp = document.getElementById('myinput');
+    var chars = document.getElementById('chars');
+    inp.onkeyup = function() {
+      chars.innerHTML = (67 - inp.value.length);
+    }
   }
   
   $('#submit').on("click", function () {
@@ -20,4 +13,14 @@ $(document).ready(function() {
       $(this).hide();
     });
   });
+  
+  function removeCanned() {
+    var replacement = document.body.innerHTML.replace(/(http:\/\/t.co\/)[a-zA-Z0-9\-\.]{10}/g, "");
+    document.body.innerHTML = replacement
+  
+    var finalReplacement = document.body.innerHTML.replace(/ Spread the word: . #WeHearNebraska/g, "");
+    document.body.innerHTML = finalReplacement
+  }
+  
+  removeCanned();
 });
