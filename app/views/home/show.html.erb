@@ -58,6 +58,7 @@
         </div>
       </nav>
       <div id="tweets">
+        <% if @tweets != nil %>
         <% @tweets.each do |tweet| %>
         <div id="tweet">
           <div id="tweet_profile_image">
@@ -74,6 +75,7 @@
           <% end %>
         </div>
       </div>
+        <% end %>
         <% end %>
         <div id="tweet">
           <div id="tweet_profile_image">

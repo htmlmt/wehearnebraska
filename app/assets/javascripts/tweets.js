@@ -7,20 +7,22 @@ $(document).ready(function() {
     }
   }
   
-  $('#submit').on("click", function () {
-    $('input[name="tweet[message]"]').map(function () {
-      $(this).val($(this).attr('title') + $(this).val() + $(this).attr('tag'));
-      $(this).hide();
-    });
-  });
-  
   function removeCanned() {
     var replacement = document.body.innerHTML.replace(/(http:\/\/t.co\/)[a-zA-Z0-9\-\.]{10}/g, "");
     document.body.innerHTML = replacement
   
     var finalReplacement = document.body.innerHTML.replace(/ Spread the word: . #WeHearNebraska/g, "");
     document.body.innerHTML = finalReplacement
+    
+    $("#submit").addClass("tweet_out")
   }
   
   removeCanned();
+  
+  $('.tweet_out').click(function () {
+    $('input[name="tweet[message]"]').map(function () {
+      $(this).val($(this).attr('title') + $(this).val() + $(this).attr('tag'));
+      $(this).hide();
+    });
+  });
 });

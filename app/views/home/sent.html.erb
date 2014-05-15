@@ -26,8 +26,8 @@
         </div>
         <div id="tweets_input_container">
           <div id="sent_message">
-            <h3 id="sent_first">Tweet sent. Thank you for spreading the word.</h3>
-            <h3 id="sent_second"><em>Please continue to help the cause:</em></h3>
+            <h3 id="sent_first">Tweet sent and submitted for approval on this page.</h3>
+            <h3 id="sent_second"><em>Please continue to help our cause:</em></h3>
             <div id="sent_actions">
               <a href="/"><div id="another_note">
                 WRITE ANOTHER NOTE
@@ -40,6 +40,7 @@
         </div>
       </nav>
       <div id="tweets">
+        <% if @tweets != nil %>
         <% @tweets.each do |tweet| %>
         <div id="tweet">
           <div id="tweet_profile_image">
@@ -56,6 +57,7 @@
           <% end %>
         </div>
       </div>
+        <% end %>
         <% end %>
         <div id="tweet">
           <div id="tweet_profile_image">
