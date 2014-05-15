@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def show
-    @hashtags = $twitter.search("#WeHearNebraska")
+    @hashtags = $twitter.search("#WeHearNebraska").take(30)
     @tweets = []
     @hashtags.each do |hashtag|
       if hashtag.favorite_count > 0
@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   end
   
   def sent
-    @hashtags = $twitter.search("#WeHearNebraska")
+    @hashtags = $twitter.search("#WeHearNebraska").take(30)
     @tweets = []
     @hashtags.each do |hashtag|
       if hashtag.favorite_count > 0
