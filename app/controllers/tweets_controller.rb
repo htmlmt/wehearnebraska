@@ -5,10 +5,10 @@ class TweetsController < ApplicationController
   def create
     respond_to do |format|
       if current_user
-        if twitter_params[:message].length > 69 && twitter_params[:message].length < 240
+        if twitter_params[:message].length > 69 && twitter_params[:message].length < 140
           current_user.tweet(twitter_params[:message])
           format.html { redirect_to :sent }
-        elsif twitter_params[:message].length == 69
+        else
           format.html { redirect_to :root }
         end
       else
