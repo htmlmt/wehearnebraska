@@ -25,6 +25,10 @@
     border-radius: 20px;
     padding: 25px;
   }
+  
+  #login_status {
+    display: none;
+  }
 }
 
 @media all and (min-width: 831px) {
@@ -54,6 +58,24 @@
 }
 
 @media all and (max-width: 670px) {
+  
+  #sent_second {
+    display: none;
+  }
+  
+  #sent_message {
+    padding: 30px;
+  }
+  
+  #another_note, #schedule_donation {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  #sent_actions {
+    width: 100%;
+  }
+  
   #tweet {
     padding: 4px 7px 20px;
   }
@@ -117,6 +139,14 @@
 }
 
 @media all and (min-width: 671px) {
+  #sent_message {
+    padding: 50px;
+  }
+  
+  #sent_actions {
+    width: 450px;
+  }
+  
   #tweet {
     padding-right: 10px;
   }
@@ -309,6 +339,18 @@
     border-radius: 20px;
     background: #681d03;
     display: inline-block;
+    -webkit-appearance: none;
+  }
+  
+  #login_status {
+    color: #fff;
+    font-family: adobe-caslon-pro;
+    font-size: 20px;
+  }
+  
+  #login_status a {
+    color: #fff;
+    text-decoration: underline;
   }
   
   #another_note {
@@ -316,7 +358,6 @@
   }
   
   #sent_actions {
-    width: 440px;
     margin: 0 auto;
   }
 
@@ -348,11 +389,7 @@
     font-weight: 100;
     text-decoration: none;
   }
-  
-  #sent_message {
-    padding: 50px;
-  }
-  
+
   #sent_first {
     color: #fff;
     text-align: center;

@@ -48,6 +48,13 @@
                 <%= link_to "LOGIN", "/auth/twitter", id: "sign_in" %>
               <% end %>
             <% end %>
+            <% if current_user %>
+            <div id="login_status">
+              <em>You are logged in as <%= current_user.name %>. <a href="/signout">
+              Click here to logout.
+            </a></em>
+            </div>
+            <% end %>
           </div>
         </div>
       </nav>
@@ -91,7 +98,7 @@
       </div>
       </div>
       <a href="https://twitter.com/search?f=realtime&q=%23WeHearNebraska&src=hash" target="_blank"><div id="see_more">
-        SEE MORE
+        SEE ALL TWEETS
       </div></a>
       <div id="dates_container">
         <div id="dates">
