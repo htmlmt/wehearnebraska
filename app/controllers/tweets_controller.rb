@@ -20,4 +20,47 @@ class TweetsController < ApplicationController
   def twitter_params
     params.require(:tweet).permit(:message)
   end
+  
+  def retweet_this
+    tweet_id = params[:tweet_id]
+    current_user.retweet(tweet_id)
+    @tweets = current_user.user_timeline(current_user)
+    retweet_id = @tweets.first.id.to_s
+    retweet = Retweet.new({
+      :tweet_id => tweet_id,
+      :retweet_id => retweet_id,
+      :user_id => current_user.id
+    })
+    retweet.save
+    
+    redirect_to :root
+  end
+  
+  def unretweet_this
+    tweet = params[:tweet_id]
+    retweet = Retweet.find_by_tweet_id(tweet)
+    current_user.unretweet(retweet.retweet_id)
+    retweet.destroy
+    redirect_to :root
+  end
+  
+  def favorite_this
+    tweet = params[:tweet_id]
+    favorite = Favorite.new({
+      :tweet_id => tweet,
+      :user_id => current_user.id
+    })
+    favorite.save
+    
+    current_user.favorite(tweet)
+    redirect_to :root
+  end
+  
+  def unfavorite_this
+    tweet = params[:tweet_id]
+    favorite = Favorite.find_by_tweet_id(tweet)
+    favorite.destroy
+    current_user.unfavorite(tweet)
+    redirect_to :root
+  end
 end

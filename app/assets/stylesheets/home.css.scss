@@ -318,6 +318,10 @@
   input:focus {
     outline: none
   }
+  
+  #favorited {
+    color: #ffac33;
+  }
 
   input[name="tweet[message]"] {
     padding: 0;
@@ -503,6 +507,10 @@
     display: inline-block;
     position: relative;
     top: 2px;
+  }
+  
+  #retweeted {
+    color: #609928;
   }
 
   #tweets_input {

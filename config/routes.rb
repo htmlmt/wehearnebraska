@@ -8,6 +8,13 @@ WeHearNebraska::Application.routes.draw do
   resources :tweets, only: [:new, :create]
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
+  
+  get 'tweets/retweet-this', to: 'tweets#retweet_this', as: 'retweet'
+  get 'tweets/unretweet-this', to: 'tweets#unretweet_this', as: 'unretweet'
+  
+  get 'tweets/favorite-this', to: 'tweets#favorite_this', as: 'favorite'
+  
+  get 'tweets/unfavorite-this', to: 'tweets#unfavorite_this', as: 'unfavorite'
  
   root to: 'home#show'
 
