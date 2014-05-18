@@ -13,7 +13,6 @@ WeHearNebraska::Application.routes.draw do
   get 'tweets/unretweet-this', to: 'tweets#unretweet_this', as: 'unretweet'
   
   get 'tweets/favorite-this', to: 'tweets#favorite_this', as: 'favorite'
-  
   get 'tweets/unfavorite-this', to: 'tweets#unfavorite_this', as: 'unfavorite'
  
   root to: 'home#show'

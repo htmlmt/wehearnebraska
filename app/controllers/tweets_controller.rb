@@ -33,7 +33,12 @@ class TweetsController < ApplicationController
     })
     retweet.save
     
-    redirect_to :root
+    @tweet = tweet
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js
+    end
   end
   
   def unretweet_this
@@ -41,7 +46,13 @@ class TweetsController < ApplicationController
     retweet = Retweet.find_by_tweet_id(tweet)
     current_user.unretweet(retweet.retweet_id)
     retweet.destroy
-    redirect_to :root
+    
+    @tweet = tweet
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js
+    end
   end
   
   def favorite_this
@@ -53,14 +64,27 @@ class TweetsController < ApplicationController
     favorite.save
     
     current_user.favorite(tweet)
-    redirect_to :root
+    
+    @tweet = tweet
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js
+    end
   end
   
   def unfavorite_this
     tweet = params[:tweet_id]
     favorite = Favorite.find_by_tweet_id(tweet)
     favorite.destroy
+    
     current_user.unfavorite(tweet)
-    redirect_to :root
+    
+    @tweet = tweet
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js
+    end
   end
 end

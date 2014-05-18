@@ -502,6 +502,10 @@
     background: #681d03;
   }
   
+  .retweet_section, .favorite_section {
+    display: inline-block;
+  }
+  
   #retweet_icon, #favorite_icon {
     width: 16px;
     display: inline-block;
