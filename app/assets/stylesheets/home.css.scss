@@ -58,6 +58,17 @@
 }
 
 @media all and (max-width: 670px) {
+  #question {
+    text-align: center;
+  }
+  
+  #lnk {
+    margin-left: 3%;
+  }
+  
+  #omaha {
+    margin-right: 3%;
+  }
   
   #sent_second {
     display: none;
@@ -139,6 +150,14 @@
 }
 
 @media all and (min-width: 671px) {
+  #lnk {
+    margin-left: 5%;
+  }
+  
+  #omaha {
+    margin-right: 5%;
+  }
+  
   #sent_message {
     padding: 50px;
   }
@@ -437,7 +456,6 @@
 
   #lnk {
     display: inline-block;
-    margin-left: 5%;
   }
 
   #lnk_date {
@@ -455,7 +473,6 @@
 
   #omaha {
     display: inline-block;
-    margin-right: 5%;
   }
 
   #omaha_date {
