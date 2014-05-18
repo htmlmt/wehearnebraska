@@ -37,15 +37,14 @@
             </div>
             <% else %>
             <div id="i_hear">
-              <label> <a href="/auth/twitter">Log in to Twitter and add your voice.</a>
-              
+              <label> <a href="/auth/twitter">Sign into Twitter, and tell us what you hear.</a>
               </label>
             </div>
             <% end %>
               <% if current_user %>
                 <%= f.submit "TWEET", :id => "submit" %>
               <% else %>
-                <%= link_to "LOGIN", "/auth/twitter", id: "sign_in" %>
+                <%= link_to "SIGN IN", "/auth/twitter", id: "sign_in" %>
               <% end %>
             <% end %>
             <% if current_user %>
