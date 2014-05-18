@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
     })
     retweet.save
     
-    @tweet = tweet
+    @tweet = tweet_id
     
     respond_to do |format|
       format.html { redirect_to :root }
@@ -43,15 +43,16 @@ class TweetsController < ApplicationController
   
   def unretweet_this
     tweet = params[:tweet_id]
-    retweet = Retweet.find_by_tweet_id(tweet)
-    current_user.unretweet(retweet.retweet_id)
-    retweet.destroy
+    @retweet_id = Retweet.find_by_tweet_id(tweet).retweet_id
+    @retweet = Retweet.find_by_tweet_id(tweet)
+    current_user.unretweet(@retweet_id)
     
     @tweet = tweet
     
     respond_to do |format|
       format.html { redirect_to :root }
       format.js
+        @retweet.destroy
     end
   end
   

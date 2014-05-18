@@ -70,14 +70,12 @@
           <p class="twit"><%= tweet.text %></p>
           <% if current_user %>
           <div id="actions">
-            <div class="retweet_section off">
+            <div class="retweet_section <%= tweet.id %>">
             <% if @retweets.include?(tweet.id) %>
-              <%= link_to "tweets/unretweet-this?tweet_id=#{tweet.id}", :remote => true do %>
               <div id="retweet_icon">
                 <img src="https://si0.twimg.com/images/dev/cms/intents/icons/retweet_on.png"/>
               </div>
               <h5 id="retweeted">&nbsp;&nbsp;Retweeted&nbsp;&nbsp;</h5>
-              <% end %>
             <% else %>
               <%= link_to "tweets/retweet-this?tweet_id=#{tweet.id}", :remote => true do %>
               <div id="retweet_icon">
@@ -88,13 +86,11 @@
             <% end %>
           </div>
           <% if @favorites.include?(tweet.id) %>
-          <div class="favorite_section on <%= tweet.id %>">
-              <%= link_to "tweets/unfavorite-this?tweet_id=#{tweet.id}", :remote => true do %>
+          <div class="favorite_section <%= tweet.id %>">
               <div id="favorite_icon"><img src="https://si0.twimg.com/images/dev/cms/intents/icons/favorite_on.png"></div><h5 id="favorited">&nbsp;&nbsp;Favorited&nbsp;&nbsp;</h5>
-              <% end %>
             </div>
             <% else %>
-            <div class="favorite_section off <%= tweet.id %>">
+            <div class="favorite_section <%= tweet.id %>">
               <%= link_to "tweets/favorite-this?tweet_id=#{tweet.id}", :remote => true do %>
               <div id="favorite_icon"><img src="https://si0.twimg.com/images/dev/cms/intents/icons/favorite.png"></div><h5>&nbsp;&nbsp;Favorite&nbsp;&nbsp;</h5>
               <% end %>

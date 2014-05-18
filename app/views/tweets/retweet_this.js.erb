@@ -1,1 +1,1 @@
-$(this).replaceWith("<%= j render 'retweet_this' %>");
+$(".retweet_section.<%= @tweet %>").children().replaceWith("<%= j render 'retweet_this' %>");
