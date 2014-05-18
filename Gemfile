@@ -39,6 +39,8 @@ gem 'omniauth-twitter', '~> 1.0.1'
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'google-analytics-rails'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
