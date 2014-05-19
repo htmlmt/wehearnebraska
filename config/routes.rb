@@ -12,11 +12,13 @@ WeHearNebraska::Application.routes.draw do
   get 'tweets/retweet-this', to: 'tweets#retweet_this', as: 'retweet'
   get 'tweets/unretweet-this', to: 'tweets#unretweet_this', as: 'unretweet'
   
+  get 'tweets/ban', to: 'tweets#ban', as: 'ban'
+  
   get 'tweets/favorite-this', to: 'tweets#favorite_this', as: 'favorite'
   get 'tweets/unfavorite-this', to: 'tweets#unfavorite_this', as: 'unfavorite'
- 
+  
   root to: 'home#show'
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

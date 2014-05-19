@@ -12,6 +12,11 @@ class HomeController < ApplicationController
         @retweets << retweet.tweet_id
       end
     end
+    @banned = Banned.all
+    @banned_tweets = []
+    @banned.each do |banned|
+      @banned_tweets << banned.tweet_id
+    end
     @hashtags = $twitter.search("#WeHearNebraska -RT", :result_type => "recent", :count => "20")
     @tweets = []
     @hashtags.each do |hashtag|

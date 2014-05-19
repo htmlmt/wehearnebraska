@@ -56,6 +56,19 @@ class TweetsController < ApplicationController
     end
   end
   
+  def ban
+    tweet = params[:tweet_id]
+    banned = Banned.new({
+      :tweet_id => tweet
+    })
+    banned.save
+    
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js
+    end
+  end
+  
   def favorite_this
     tweet = params[:tweet_id]
     favorite = Favorite.new({
