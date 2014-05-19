@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  require 'twitter-text'
+  include Twitter::Autolink
+  include Twitter::Extractor
+  
   attr_accessible :name, :oauth_secret, :oauth_token, :provider, :uid
   
   has_many :favorites

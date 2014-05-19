@@ -17,7 +17,18 @@ $(document).ready(function() {
     $("#submit").addClass("tweet_out")
   }
   
+  function removeOtherCanned() {
+    var replacement = document.body.innerHTML.replace(/(http:\/\/t.co\/)[a-zA-Z0-9\-\.]{10}/g, "");
+    document.body.innerHTML = replacement
+  
+    var finalReplacement = document.body.innerHTML.replace(/ Spread the word:  . #WeHearNebraska/g, "");
+    document.body.innerHTML = finalReplacement
+    
+    $("#submit").addClass("tweet_out")
+  }
+  
   removeCanned();
+  removeOtherCanned();
   
   $('.tweet_out').click(function () {
     $('input[name="tweet[message]"]').map(function () {

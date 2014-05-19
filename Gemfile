@@ -41,6 +41,12 @@ gem 'unicorn'
 
 gem 'google-analytics-rails'
 
+gem 'twitter-text'
+
+gem 'redcarpet'
+
+gem 'unicode'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
