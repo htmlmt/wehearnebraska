@@ -12,7 +12,7 @@ class HomeController < ApplicationController
         @retweets << retweet.tweet_id
       end
     end
-    @hashtags = $twitter.search("#WeHearNebraska", :result_type => "recent").take(50)
+    @hashtags = $twitter.search("#WeHearNebraska -RT", :result_type => "recent", :count => "20")
     @tweets = []
     @hashtags.each do |hashtag|
       if hashtag.favorite_count > 0
@@ -34,7 +34,7 @@ class HomeController < ApplicationController
         @retweets << retweet.tweet_id
       end
     end
-    @hashtags = $twitter.search("#WeHearNebraska", :result_type => "recent").take(50)
+   @hashtags = $twitter.search("#WeHearNebraska -RT", :result_type => "recent", :count => "20")
     @tweets = []
     @hashtags.each do |hashtag|
       if hashtag.favorite_count > 0
