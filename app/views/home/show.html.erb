@@ -2,7 +2,7 @@
   <div id="diag_backdrop">
     <div id="container">
       <nav>
-        <div id="call_to_action"><a href="http://givetolincoln.razoo.com/story/Hearnebraska" target="_blank">Tell the world to listen. Donate to Hear Nebraska.</a></div>
+        <div id="call_to_action"><a href="http://omahagives24.org/#npo/hear-nebraska" target="_blank">Tell the world to listen. Donate to Hear Nebraska.</a></div>
         <div id="dates_container">
           <div id="dates">
             <div id="omaha">
@@ -60,15 +60,14 @@
       <div id="tweets">
         <% if @tweets != nil %>
         <% @tweets.each do |tweet| %>
-        <% unless @banned_tweets.include?(tweet.id) %>
         <div id="tweet">
-          <% if current_user %>
-            <% if current_user.name == "Hear Nebraska" %>
-            <div id="ban">
-              <%= link_to "X", "tweets/ban?tweet_id=#{tweet.id}" %>
-            </div>
-            <% end %>
+        <% if current_user %>
+          <% if current_user.name == "Hear Nebraska" %>
+          <div id="ban">
+            <%= link_to "X", "tweets/ban?tweet_id=#{tweet.id}" %>
+          </div>
           <% end %>
+        <% end %>
           <div id="tweet_profile_image">
             <a href="http://twitter.com/<%= tweet.user.screen_name %>" target="_blank"><img src="<%= tweet.user.profile_image_uri(size = :bigger) %>" width="20px" alt="profile_image"/></a>
           </div>
@@ -108,7 +107,6 @@
           <% end %>
         </div>
       </div>
-        <% end %>
         <% end %>
         <% end %>
       </div>
