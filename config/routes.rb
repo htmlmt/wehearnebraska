@@ -17,6 +17,8 @@ WeHearNebraska::Application.routes.draw do
   get 'tweets/favorite-this', to: 'tweets#favorite_this', as: 'favorite'
   get 'tweets/unfavorite-this', to: 'tweets#unfavorite_this', as: 'unfavorite'
   
+  get 'tweets/profpic', to: 'tweets#profpic', as: 'profpic'
+  
   root to: 'home#show'
   
   # The priority is based upon order of creation:
