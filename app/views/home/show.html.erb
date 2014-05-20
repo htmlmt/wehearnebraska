@@ -60,6 +60,7 @@
       <div id="tweets">
         <% if @tweets != nil %>
         <% @tweets.each do |tweet| %>
+        <% unless @banned_tweets.include?(tweet.id) %>
         <div id="tweet">
         <% if current_user %>
           <% if current_user.name == "Hear Nebraska" %>
@@ -107,6 +108,7 @@
           <% end %>
         </div>
       </div>
+        <% end %>
         <% end %>
         <% end %>
       </div>
