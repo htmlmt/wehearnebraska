@@ -146,6 +146,11 @@
 }
 
 @media all and (min-width: 671px) {
+  #another_note {
+    margin-right: 5%;
+    margin-left: 10%;
+  }    
+    
   #lnk {
     margin-left: 5%;
   }
@@ -366,11 +371,6 @@
   #login_status a {
     color: #fff;
     text-decoration: underline;
-  }
-  
-  #another_note {
-    margin-right: 5%;
-    margin-left: 10%;
   }
   
   #sent_actions {
