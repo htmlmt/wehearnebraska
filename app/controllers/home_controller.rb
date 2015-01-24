@@ -17,13 +17,7 @@ class HomeController < ApplicationController
     @banned.each do |banned|
       @banned_tweets << banned.tweet_id
     end
-    @hashtags = $twitter.search("#WeHearNebraska -RT", :result_type => "recent", :count => "20")
-    @tweets = []
-    @hashtags.each do |hashtag|
-      if hashtag.favorite_count > 0
-        @tweets << hashtag
-      end
-    end
+    @tweets = $twitter.search("#WeHearNebraska -RT", :count => "20")
   end
   
   def sent
@@ -44,12 +38,6 @@ class HomeController < ApplicationController
     @banned.each do |banned|
       @banned_tweets << banned.tweet_id
     end
-    @hashtags = $twitter.search("#WeHearNebraska -RT", :result_type => "recent", :count => "20")
-    @tweets = []
-    @hashtags.each do |hashtag|
-      if hashtag.favorite_count > 0
-        @tweets << hashtag
-      end
-    end
+    @tweets = $twitter.search("#WeHearNebraska -RT", :count => "20")
   end
 end
