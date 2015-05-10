@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
+      user.photo = auth.info.image
+      user.username = auth.info.nickname
       user.oauth_token = auth.credentials.token
       user.oauth_secret = auth.credentials.secret
       user.save!
@@ -21,8 +23,8 @@ class User < ActiveRecord::Base
  
   def tweet(tweet)
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = Rails.application.config.twitter_key
-      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.consumer_key        = ENV['CONSUMER_KEY']
+      config.consumer_secret     = ENV['CONSUMER_SECRET']
       config.access_token        = oauth_token
       config.access_token_secret = oauth_secret
     end

@@ -1,0 +1,17 @@
+.body--background {
+    @include drop-shadow(0, 0, 35px, .3);
+    background: url("https://s3.amazonaws.com/WeHearNebraska/diag.png") repeat 50% 0;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+form {
+    font-size: 0;
+}
+
+@media only screen and (min-width: $smallTabletBreakpoint) {
+    .body--background {
+        padding: 25px;
+    }
+}

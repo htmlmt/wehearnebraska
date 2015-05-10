@@ -1,0 +1,25 @@
+.donate--call-to-action {
+    background-color: $white;
+    text-align: center;
+}
+
+.donate--call-to-action a {
+    color: $siteOrange;
+    font-size: (20rem/16);
+}
+
+.donate--logo {
+    background-color: $siteBrown;
+}
+
+.logo--image {
+    width: 115px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+@media only screen and (min-width: $smallTabletBreakpoint) {
+    .donate--call-to-action {
+        padding: 15px;
+    }
+}

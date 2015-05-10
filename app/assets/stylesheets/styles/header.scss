@@ -1,0 +1,111 @@
+.container--header {
+    background-color: $siteOrange;
+}
+
+.header--question {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 2.5% 0;
+}
+
+.header--question h1 {
+    color: $white;
+    margin: 0;
+    font-size: (50rem/16);
+}
+
+.header--question h1 em {
+    font-family: "adobe-caslon-pro";
+}
+
+.question--sign-in-message {
+    width: calc(97.5% - 95px);
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2.5%;
+}
+
+.question--sign-in-message a {
+    font-size: 1rem;
+    color: $midGrey;
+}
+
+.question--sign-in-message a:hover {
+    text-decoration: underline;
+}
+
+#sign-in, #submit {
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: $siteBrown;
+    color: $white;
+    width: 95px;
+    text-align: center;
+}
+
+#submit {
+    margin-left: 2.5%;
+}
+
+.question--input {
+    width: calc(95% - 95px);
+    display: inline-block;
+    position: relative;
+}
+
+.question--input .input--band {
+    font-size: 1rem;
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    margin-right: 2.5%;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.question--input .input--message {
+    font-size: 1rem;
+    width: 72.5%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.question--characters-left {
+    font-size: 1rem;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    color: $midGrey;
+}
+
+.question--login-status {
+    margin-top: 2%;
+    font-size: 1.25rem;
+}
+
+.question--login-status em {
+    color: $white;
+    font-family: 'adobe-caslon-pro';
+}
+
+.question--login-status a {
+    color: $white;
+    font-family: 'adobe-caslon-pro';
+}
+
+.question--login-status a:hover {
+    text-decoration: underline;
+}

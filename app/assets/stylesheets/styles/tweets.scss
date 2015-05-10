@@ -1,0 +1,57 @@
+.container--tweets {
+    padding: 25px;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    @include clearfix();
+}
+
+.tweets--tweet {
+    background: $white;
+    @include drop-shadow( -3px, 7px, 7px, 0.3);
+    border-radius: 20px;
+    width: 95%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-bottom: 25px;
+    display: inline-block;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+}
+
+.tweet--profile-image img {
+    width: 70px;
+    border-radius: 10px;
+    margin: 5%;
+    float: left;
+}
+
+.tweet--content {
+    padding-left: 111px;
+    padding-bottom: 20px;
+}
+
+.content--handle {
+    font-family: "source-sans-pro";
+    color: #aaa;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.content--handle div {
+    color: $siteOrange;
+    display: inline-block;
+}
+
+.content--handle div em {
+    font-family: "adobe-caslon-pro";
+}
+
+.content--handle div em:hover {
+    font-family: "adobe-caslon-pro";
+    text-decoration: underline;
+}

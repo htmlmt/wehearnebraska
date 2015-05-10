@@ -5,11 +5,14 @@ class TweetsController < ApplicationController
   def create
     respond_to do |format|
       if current_user
-        if twitter_params[:message].length > 69 && twitter_params[:message].length < 140
-          current_user.tweet(twitter_params[:message])
+        binding.pry
+        message = twitter_params[:band] + ' ' + twitter_params[:message]
+        current_user.tweet(message)
+        @post = Post.new(text: message, username: current_user.username, full_name: current_user.name, photo: current_user.photo)
+        if @post.save
           format.html { redirect_to :sent }
         else
-          format.html { redirect_to :root }
+          format.html { redirect_to :show}
         end
       else
         format.html { redirect_to :sent }
@@ -18,7 +21,7 @@ class TweetsController < ApplicationController
   end
  
   def twitter_params
-    params.require(:tweet).permit(:message)
+    params.require(:tweet).permit(:message, :band)
   end
   
   def retweet_this

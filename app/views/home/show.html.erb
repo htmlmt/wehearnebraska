@@ -1,154 +1,106 @@
-<div id="backdrop">
-  <div id="diag_backdrop">
-    <div id="container">
-      <nav>
-        <div id="call_to_action">
-          <a href="http://hearnebraska.org/donate" target="_blank">
-            Tell the world to listen. Donate to Hear Nebraska.
-          </a>
-        </div>
-        <div id="dates_container">
-          <div id="dates">
-            <div id="logo">
-              <a href="/">
-                <img src="https://s3.amazonaws.com/WeHearNebraska/hn-logo-white.png" alt="logo"/>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div id="tweets_input_container">
-          <div id="tweets_input">
-            <h1 id="question"><em>What's cool about Nebraska?</em></h1>
-            <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
-              <% if current_user %>
-                <div id="i_hear">
-                  <label> I hear Nebraska
-                    <%= f.text_field :message, :placeholder => "...", :title => "I hear Nebraska ", :tag => " Spread the word: wehearnebraska.org. #WeHearNebraska", :value => "#{@message}", :id => "myinput" %>
-                  </label>
-                  <span id="chars">67</span>
-                </div>
-              <% else %>
-                <div id="i_hear">
-                  <label> 
-                    <a href="/auth/twitter">Sign into Twitter, and tell us what you hear.</a>
-                  </label>
-                </div>
-              <% end %>
-              <% if current_user %>
-                <%= f.submit "TWEET", :id => "submit" %>
-              <% else %>
-                <%= link_to "SIGN IN", "/auth/twitter", id: "sign_in" %>
-              <% end %>
-            <% end %>
-            <% if current_user %>
-              <div id="login_status">
-                <em>You are logged in as <%= current_user.name %>. 
-                  <a href="/signout">
-                    Click here to logout.
-                  </a>
-                </em>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </nav>
-      <div id="tweets">
-        <% if @tweets.attrs[:statuses] != [] %>
-          <% @tweets.each do |tweet| %>
-            <% unless @banned_tweets.include?(tweet.id) %>
-              <div id="tweet">
-                <% if current_user %>
-                  <% if current_user.name == "Hear Nebraska" %>
-                    <div id="ban">
-                      <%= link_to "X", "tweets/ban?tweet_id=#{tweet.id}" %>
-                    </div>
-                  <% end %>
-                <% end %>
-                <div id="tweet_profile_image">
-                  <a href="http://twitter.com/<%= tweet.user.screen_name %>" target="_blank">
-                    <img src="<%= tweet.user.profile_image_uri(size = :bigger) %>" width="20px" alt="profile_image"/>
-                  </a>
-                </div>
-                <div id="tweet_text">
-                  <h4><%= tweet.user.name %>&nbsp;&nbsp; 
-                    <a href="http://twitter.com/<%= tweet.user.screen_name %>">
-                      <div id="handle">
-                        <em>@<%= tweet.user.screen_name %></em>
-                      </div>
+<div class="body">
+    <div class="body--background">
+        <div class="background--container">
+            <div class="container--donate">
+                <div class="donate--call-to-action">
+                    <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944" target="_blank">
+                        Make our state a cultural destination. Donate to Hear Nebraska today.
                     </a>
-                  </h4>
-                  <p class="twit"><%= simple_format(tweet.text.encode) %></p>
-                  <% if current_user %>
-                    <div id="actions">
-                      <% unless tweet.user.name == current_user.name %>
-                        <div class="retweet_section <%= tweet.id %>">
-                          <% if @retweets.include?(tweet.id) %>
-                            <div id="retweet_icon">
-                              <img src="https://si0.twimg.com/images/dev/cms/intents/icons/retweet_on.png"/>
-                            </div>
-                            <h5 id="retweeted">&nbsp;&nbsp;Retweeted&nbsp;&nbsp;</h5>
-                          <% else %>
-                            <%= link_to "tweets/retweet-this?tweet_id=#{tweet.id}", :remote => true do %>
-                            <div id="retweet_icon">
-                              <img src="https://si0.twimg.com/images/dev/cms/intents/icons/retweet.png"/>
-                            </div>
-                            <h5>&nbsp;&nbsp;Retweet&nbsp;&nbsp;</h5>
-                            <% end %>
-                          <% end %>
-                        </div>
-                      <% end %>
-                      <% if @favorites.include?(tweet.id) %>
-                        <div class="favorite_section <%= tweet.id %>">
-                          <div id="favorite_icon">
-                            <img src="https://si0.twimg.com/images/dev/cms/intents/icons/favorite_on.png">
-                          </div>
-                          <h5 id="favorited">&nbsp;&nbsp;Favorited&nbsp;&nbsp;</h5>
-                        </div>
-                      <% else %>
-                        <div class="favorite_section <%= tweet.id %>">
-                          <%= link_to "tweets/favorite-this?tweet_id=#{tweet.id}", :remote => true do %>
-                          <div id="favorite_icon">
-                            <img src="https://si0.twimg.com/images/dev/cms/intents/icons/favorite.png">
-                          </div>
-                          <h5>&nbsp;&nbsp;Favorite&nbsp;&nbsp;</h5>
-                          <% end %>
-                        </div>
-                      <% end %>
-                    </div>
-                  <% end %>
                 </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% else %>
-          <div id="tweet">
-            <div id="tweet_profile_image">
-              <a href="http://twitter.com/hearnebraska" target="_blank">
-                <img src="https://pbs.twimg.com/profile_images/481163467903078400/OaHZmk1J.png" width="20px" alt="profile_image"/>
-              </a>
+                <div class="donate--logo">
+                    <div class="logo--image">
+                        <a href="https://www.hearnebraska.org">
+                            <%= image_tag("hn-logo.png", srcset: "assets/hn-logo.png 1x, assets/hn-logo_2x.png 2x, assets/hn-logo_3x.png 3x", alt: "Hear Nebraska") %>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div id="tweet_text">
-              <h4>Hear Nebraska 
-                <a href="http://twitter.com/hearnebraska">
-                  <div id="handle">
-                    <em>@hearnebraska</em>
-                  </div>
-                </a>
-              </h4>
-              <p class="twit">You must have been quiet because we can't find any recent tweets. Raise your voice, and share what you know is cool about Nebraska.</p>
+            <header class="container--header">
+                <div class="header--question">
+                    <h1 class="question--text"><em>Which band should tour Nebraska?</em></h1>
+                    <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
+                        <% if current_user %>
+                            <div class="question--input">
+                                <%= f.text_field :band, :placeholder => "@BandHandle", :value => "#{@band}", :class => "input--band" %>
+                                <%= f.text_field :message, :placeholder => "Explain why they should come.", :tag => " See why: tournebraska.org. #TourNebraska", :value => "#{@message}", :class => "input--message" %>
+                                <span class="question--characters-left">99</span>
+                            </div>
+                        <% else %>
+                            <div class="question--sign-in-message">
+                                <a href="/auth/twitter">Sign into Twitter, and tell us what you hear.</a>
+                            </div>
+                        <% end %>
+                        <% if current_user %>
+                            <%= f.submit "TWEET", :id => "submit" %>
+                        <% else %>
+                            <%= link_to "SIGN IN", "/auth/twitter", id: "sign-in" %>
+                        <% end %>
+                    <% end %>
+                    <% if current_user %>
+                        <div class="question--login-status">
+                            <em>You are logged in as <%= current_user.name %>. 
+                                <a href="/signout">
+                                    Click here to logout.
+                                </a>
+                            </em>
+                        </div>
+                    <% end %>
+                </div>
+            </header>
+            <main class="container--tweets">
+                <% if @tweets.count != 0 %>
+                    <% @tweets.each do |tweet| %>
+                        <div class="tweets--tweet">
+                            <div class="tweet--profile-image">
+                                <a href="http://twitter.com/<%= tweet.username %>" target="_blank">
+                                    <img src="<%= tweet.photo %>" width="20px" alt="profile_image"/>
+                                </a>
+                            </div>
+                            <div class="tweet--content">
+                                <h4 class="content--handle"><%= tweet.full_name %>&nbsp;&nbsp; 
+                                    <a href="http://twitter.com/<%= tweet.username %>">
+                                        <div>
+                                            <em>@<%= tweet.username %></em>
+                                        </div>
+                                    </a>
+                                </h4>
+                                <p class="content--text">
+                                    <%= simple_format(tweet.text.encode) %>
+                                </p>
+                            </div>
+                        </div>
+                    <% end %>
+                <% else %>
+                    <div class="tweets--tweet">
+                        <div class="tweet--profile-image">
+                            <a href="http://twitter.com/hearnebraska" target="_blank">
+                                <img src="https://pbs.twimg.com/profile_images/481163467903078400/OaHZmk1J.png" width="20px" alt="profile_image"/>
+                            </a>
+                        </div>
+                        <div class="tweet--content">
+                            <h4 class="content--handle">Hear Nebraska 
+                                <a href="http://twitter.com/hearnebraska">
+                                    <div>
+                                        <em>@hearnebraska</em>
+                                    </div>
+                                </a>
+                            </h4>
+                            <p class="content--text">
+                                Be the first to ask a band to tour Nebraska. Sign in, and tell them to play above.
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+            </main>
+            <div class="container--donate">
+                <div class="donate--logo">
+                    <div class="logo--image">
+                        <a href="https://www.hearnebraska.org">
+                            <%= image_tag("hn-logo.png", srcset: "assets/hn-logo.png 1x, assets/hn-logo_2x.png 2x, assets/hn-logo_3x.png 3x", alt: "Hear Nebraska") %>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-      <div id="dates_container">
-        <div id="dates">
-          <div id="logo">
-            <a href="/">
-              <img src="https://s3.amazonaws.com/WeHearNebraska/hn-logo-white.png" alt="logo"/>
-            </a>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140519182733) do
+ActiveRecord::Schema.define(:version => 20150510203506) do
 
   create_table "banneds", :force => true do |t|
     t.integer  "tweet_id",   :limit => 8
@@ -26,12 +26,30 @@ ActiveRecord::Schema.define(:version => 20140519182733) do
     t.datetime "updated_at",              :null => false
   end
 
+  create_table "posts", :force => true do |t|
+    t.string   "text"
+    t.string   "username"
+    t.string   "full_name"
+    t.string   "photo"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "retweets", :force => true do |t|
     t.integer  "user_id"
     t.integer  "tweet_id",   :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
     t.integer  "retweet_id", :limit => 8
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.string   "text"
+    t.string   "username"
+    t.string   "full_name"
+    t.string   "photo"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -42,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20140519182733) do
     t.string   "oauth_secret"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "photo"
+    t.string   "username"
   end
 
 end
