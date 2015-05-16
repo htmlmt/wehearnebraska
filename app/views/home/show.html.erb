@@ -22,8 +22,8 @@
                     <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
                         <% if current_user %>
                             <div class="question--input">
-                                <%= f.text_field :band, :placeholder => "@Band", :value => "#{@band}", :class => "input--band" %>
-                                <%= f.text_field :message, :placeholder => "Why should they play a concert in our state?", :tag => " See info: tournebraska.org. #TourNebraska", :value => "#{@message}", :class => "input--message" %>
+                                <%= f.text_field :band, :placeholder => "@BandHandle", :value => "#{@band}", :class => "input--band" %>
+                                <%= f.text_field :message, :placeholder => "Why should they?", :tag => " See info: tournebraska.org. #TourNebraska", :value => "#{@message}", :class => "input--message" %>
                                 <span class="question--characters-left">92</span>
                             </div>
                         <% else %>
