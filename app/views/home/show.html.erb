@@ -2,32 +2,33 @@
     <div class="body--background">
         <div class="background--container">
             <div class="container--donate">
-                <div class="donate--call-to-action">
-                    <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944" target="_blank">
-                        Make our state a cultural destination. Donate to Hear Nebraska today.
-                    </a>
-                </div>
-                <div class="donate--logo">
-                    <div class="logo--image">
-                        <a href="https://www.hearnebraska.org">
-                            <%= image_tag("hn-logo.png", srcset: "assets/hn-logo.png 1x, assets/hn-logo_2x.png 2x, assets/hn-logo_3x.png 3x", alt: "Hear Nebraska") %>
-                        </a>
+                <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944" target="_blank">
+                    <div class="donate--call-to-action">
+                        <% if current_user %>
+                            <strong>Donate to Hear Nebraska today. We're working to make our state a cultural destination.</strong>
+                        <% else %>
+                            <strong>Make Nebraska a destination for bands like The Avett Brothers.</strong>
+                        <% end %>
                     </div>
-                </div>
+                </a>
             </div>
             <header class="container--header">
                 <div class="header--question">
-                    <h1 class="question--text"><em>Which band should tour Nebraska?</em></h1>
+                    <% unless current_user %>
+                        <h1 class="question--text"><em>Because silence won't convince them.</em></h1>
+                    <% else %>
+                        <h1 class="question--text"><em>Tell your favorite band to play Nebraska.</em></h1>
+                    <% end %>
                     <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
                         <% if current_user %>
                             <div class="question--input">
-                                <%= f.text_field :band, :placeholder => "@BandHandle", :value => "#{@band}", :class => "input--band" %>
-                                <%= f.text_field :message, :placeholder => "Explain why they should come.", :tag => " See why: tournebraska.org. #TourNebraska", :value => "#{@message}", :class => "input--message" %>
-                                <span class="question--characters-left">99</span>
+                                <%= f.text_field :band, :placeholder => "@Band", :value => "#{@band}", :class => "input--band" %>
+                                <%= f.text_field :message, :placeholder => "Why should they play a concert in our state?", :tag => " See info: tournebraska.org. #TourNebraska", :value => "#{@message}", :class => "input--message" %>
+                                <span class="question--characters-left">92</span>
                             </div>
                         <% else %>
                             <div class="question--sign-in-message">
-                                <a href="/auth/twitter">Sign into Twitter, and tell us what you hear.</a>
+                                <a href="/auth/twitter">Sign into Twitter, and tell your favorite band to play a show in our state.</a>
                             </div>
                         <% end %>
                         <% if current_user %>
@@ -36,17 +37,17 @@
                             <%= link_to "SIGN IN", "/auth/twitter", id: "sign-in" %>
                         <% end %>
                     <% end %>
-                    <% if current_user %>
-                        <div class="question--login-status">
-                            <em>You are logged in as <%= current_user.name %>. 
-                                <a href="/signout">
-                                    Click here to logout.
-                                </a>
-                            </em>
-                        </div>
-                    <% end %>
                 </div>
             </header>
+            <% if current_user %>
+                <div class="container--login-status">
+                    <em>You are logged in as <%= current_user.name %>. 
+                        <a href="/signout">
+                            Click here to logout.
+                        </a>
+                    </em>
+                </div>
+            <% end %>
             <main class="container--tweets">
                 <% if @tweets.count != 0 %>
                     <% @tweets.each do |tweet| %>
@@ -67,6 +68,17 @@
                                 <p class="content--text">
                                     <%= simple_format(tweet.text.encode) %>
                                 </p>
+                                <% if current_user %>
+                                    <% if current_user.name == "Hear Nebraska" %>
+                                        <div class="content--approval">
+                                            <% if tweet.approved != true %>
+                                                <a href="/posts/<%= tweet.id %>/approve"><p>Approve</p></a>
+                                            <% else %>
+                                                <a href="/posts/<%= tweet.id %>/unapprove"><p>Unapprove</p></a>
+                                            <% end %>
+                                        </div>
+                                    <% end %>
+                                <% end %>
                             </div>
                         </div>
                     <% end %>

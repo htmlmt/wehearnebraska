@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150510203506) do
+ActiveRecord::Schema.define(:version => 20150516211559) do
 
   create_table "banneds", :force => true do |t|
     t.integer  "tweet_id",   :limit => 8
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20150510203506) do
     t.string   "photo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "approved"
   end
 
   create_table "retweets", :force => true do |t|

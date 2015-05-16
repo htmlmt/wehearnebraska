@@ -4,6 +4,7 @@ WeHearNebraska::Application.routes.draw do
 
   resources :tweets
 
+  root to: 'home#show'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
@@ -25,5 +26,6 @@ WeHearNebraska::Application.routes.draw do
   
   get 'tweets/profpic', to: 'tweets#profpic', as: 'profpic'
   
-  root to: 'home#show'
+  get 'posts/:id/approve', to: 'posts#approve', as: 'approve'
+  get 'posts/:id/unapprove', to: 'posts#unapprove', as: 'unapprove'
 end

@@ -1,9 +1,10 @@
 .donate--call-to-action {
     background-color: $white;
     text-align: center;
+    padding: 2.5%;
 }
 
-.donate--call-to-action a {
+.donate--call-to-action {
     color: $siteOrange;
     font-size: (20rem/16);
 }
@@ -21,5 +22,11 @@
 @media only screen and (min-width: $smallTabletBreakpoint) {
     .donate--call-to-action {
         padding: 15px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .call-to-action--break {
+        display: none;
     }
 }

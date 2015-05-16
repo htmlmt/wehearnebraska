@@ -1,32 +1,57 @@
 .container--header {
-    background-color: $siteOrange;
+    background: url('avett-brothers.jpg') #000;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 47.5%;
+    padding-bottom: 5%;
+    border-bottom: 10px solid $siteOrange;
 }
 
-.header--question {
+.header--question, .header--sent {
     width: 90%;
     margin: 0 auto;
     max-width: 760px;
     padding: 2.5% 0;
 }
 
-.header--question h1 {
+.header--question h1, .header--sent h1 {
     color: $white;
     margin: 0;
-    font-size: (50rem/16);
+    font-size: (24rem/16);
+    margin-bottom: 1rem;
 }
 
-.header--question h1 em {
+.header--question h1 em, .header--sent h1 em {
     font-family: "adobe-caslon-pro";
+    line-height: 1.75;
 }
 
 .question--sign-in-message {
-    width: calc(97.5% - 95px);
     padding: 10px 20px;
     background-color: white;
     border-radius: 30px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 2.5%;
+    margin-bottom: 3.5%;
+    width: 100%;
+}
+
+.sent--button:nth-of-type(1) {
+    margin-right: 2.5%;
+}
+
+.sent--button {
+    padding: 10px 20px;
+    background-color: $siteBrown;
+    border-radius: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 3.5%;
+    color: $white;
+    width: 47%;
+    max-width: 225px;
+    text-align: center;
 }
 
 .question--sign-in-message a {
@@ -40,33 +65,26 @@
 
 #sign-in, #submit {
     font-size: 1rem;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
     padding: 10px 20px;
     border-radius: 30px;
-    background-color: $siteBrown;
-    color: $white;
-    width: 95px;
+    background-color: #501c14;
+    color: white;
+    width: 60%;
+    max-width: 225px;
+    margin: 0 auto;
     text-align: center;
 }
 
 #submit {
-    margin-left: 2.5%;
-}
-
-.question--input {
-    width: calc(95% - 95px);
-    display: inline-block;
-    position: relative;
+    margin-top: 3.5%;
 }
 
 .question--input .input--band {
     font-size: 1rem;
-    width: 25%;
     display: inline-block;
     vertical-align: middle;
-    margin: 0;
-    margin-right: 2.5%;
+    margin: 0 2.5% 3.5% 0;
     padding: 10px 20px;
     background-color: white;
     border-radius: 30px;
@@ -74,38 +92,101 @@
 
 .question--input .input--message {
     font-size: 1rem;
-    width: 72.5%;
     display: inline-block;
     vertical-align: middle;
     margin: 0;
-    padding: 10px 20px;
+    padding: 10px 65px 10px 20px;
     background-color: white;
     border-radius: 30px;
 }
 
 .question--characters-left {
+    display: none;
+}
+
+.container--login-status {
+    padding: 1%;
     font-size: 1rem;
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    color: $midGrey;
+    background-color: $white;
+    text-align: center;
 }
 
-.question--login-status {
-    margin-top: 2%;
-    font-size: 1.25rem;
+.container--login-status em {
+    color: $siteBlue;
+    font-family: 'source-sans-pro';
 }
 
-.question--login-status em {
-    color: $white;
-    font-family: 'adobe-caslon-pro';
+.container--login-status a {
+    color: $siteBlue;
+    font-family: 'source-sans-pro';
 }
 
-.question--login-status a {
-    color: $white;
-    font-family: 'adobe-caslon-pro';
-}
-
-.question--login-status a:hover {
+.container--login-status a:hover {
     text-decoration: underline;
+}
+
+.header--trail {
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 0.5%;
+}
+
+@media only screen and (min-width: 600px) {
+    .header--question h1, .header--sent h1 {
+        color: $white;
+        margin: 0;
+        font-size: (28rem/16);
+    }
+    
+    .line-break {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .question--input .input--band {
+        width: 25%;
+        margin: 0 2.5% 0 0;
+    }
+    
+    .question--input .input--message {
+        width: 72.5%;
+    }
+    
+    .question--characters-left {
+        display: block;
+        font-size: 1rem;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        color: $midGrey;
+    }
+    
+    .question--input {
+        width: calc(95% - 95px);
+        display: inline-block;
+        position: relative;
+    }
+    
+    .header--question h1, .header--sent h1 {
+        color: $white;
+        margin: 0;
+        font-size: (40rem/16);
+    }
+    
+    .question--sign-in-message {
+        margin-bottom: 0;
+        width: calc(97.5% - 95px);
+    }
+    
+    #sign-in, #submit {
+        display: inline-block;
+        vertical-align: middle;
+        width: 95px;
+    }
+    
+    #submit {
+        margin-left: 2.5%;
+        margin-top: 0;
+    }
 }

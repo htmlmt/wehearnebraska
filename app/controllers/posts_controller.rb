@@ -9,6 +9,26 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+  
+  def approve
+    respond_to do |format|
+      @post = Post.find(params[:id])
+    
+      if @post.update_attributes(approved: true)
+        format.html { redirect_to :root }
+      end
+    end
+  end
+  
+  def unapprove
+    respond_to do |format|
+      @post = Post.find(params[:id])
+    
+      if @post.update_attributes(approved: false)
+        format.html { redirect_to :root }
+      end
+    end
+  end
 
   # GET /posts/1
   # GET /posts/1.json
@@ -87,6 +107,6 @@ class PostsController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def post_params
-      params.require(:post).permit(:full_name, :photo, :text, :username)
+      params.require(:post).permit(:full_name, :photo, :text, :username, :approved)
     end
 end

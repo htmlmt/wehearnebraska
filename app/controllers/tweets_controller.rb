@@ -5,7 +5,6 @@ class TweetsController < ApplicationController
   def create
     respond_to do |format|
       if current_user
-        binding.pry
         message = twitter_params[:band] + ' ' + twitter_params[:message]
         current_user.tweet(message)
         @post = Post.new(text: message, username: current_user.username, full_name: current_user.name, photo: current_user.photo)

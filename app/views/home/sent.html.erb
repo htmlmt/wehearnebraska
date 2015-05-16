@@ -2,37 +2,29 @@
     <div class="body--background">
         <div class="background--container">
             <div class="container--donate">
-                <div class="donate--call-to-action">
-                    <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944" target="_blank">
-                        Make our state a cultural destination. Donate to Hear Nebraska today.
-                    </a>
-                </div>
-                <div class="donate--logo">
-                    <div class="logo--image">
-                        <a href="https://www.hearnebraska.org">
-                            <%= image_tag("hn-logo.png", srcset: "assets/hn-logo.png 1x, assets/hn-logo_2x.png 2x, assets/hn-logo_3x.png 3x", alt: "Hear Nebraska") %>
-                        </a>
+                <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944" target="_blank">
+                    <div class="donate--call-to-action">
+                        <% if current_user %>
+                            <strong>Donate to Hear Nebraska today. We're working to make our state a cultural destination.</strong>
+                        <% else %>
+                            <strong>Make Nebraska a destination for bands like The Avett Brothers.</strong>
+                        <% end %>
                     </div>
-                </div>
+                </a>
             </div>
             <header class="container--header">
-                <div id="sent_message">
-                    <h3 id="sent_first">Tweet sent and submitted for approval on this page.</h3>
-                    <h3 id="sent_second">
-                        <em>Please continue to help our cause:</em>
-                    </h3>
-                    <div id="sent_actions">
-                        <a href="/">
-                            <div id="another_note">
-                                WRITE ANOTHER TWEET
-                            </div>
-                        </a>
-                        <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944">
-                            <div id="schedule_donation">
-                                DONATE TO HN
-                            </div>
-                        </a>
-                    </div>
+                <div class="header--sent">
+                    <h1 class="sent--text"><em>Tweet sent and submitted<br class="line-break"> for approval below.</em></h1>
+                    <a href="/">
+                        <div class="sent--button">
+                            TWEET AGAIN
+                        </div>
+                    </a>
+                    <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944">
+                        <div class="sent--button">
+                            DONATE TO HN
+                        </div>
+                    </a>
                 </div>
             </header>
             <main class="container--tweets">
