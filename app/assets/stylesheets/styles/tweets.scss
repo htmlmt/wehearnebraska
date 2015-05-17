@@ -69,6 +69,10 @@
     max-width: 760px;
 }
 
+.tweet--content a {
+    color: $siteOrange;
+}
+
 @media screen and (min-width: 700px) {
     .container--tweets {
         -moz-column-count: 2;

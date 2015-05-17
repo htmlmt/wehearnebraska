@@ -6,6 +6,8 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if current_user
         twitter_params[:message][0] = twitter_params[:message][0].downcase
+        post_message = twitter_params[:band] + ' Please play Nebraska because ' + twitter_params[:message]
+        @post = Post.new(text: post_message, username: current_user.username, full_name: current_user.name, photo: current_user.photo)
         message = '.' + twitter_params[:band] + ' Please play Nebraska because ' + twitter_params[:message] + ' Visit: tournebraska.org'
         begin
           current_user.tweet(message)
@@ -13,7 +15,6 @@ class TweetsController < ApplicationController
           flash[:notice] = "Your tweet could not be sent. Was it too long perhaps? Please try again."
           format.html { redirect_to :root }
         end
-        @post = Post.new(text: message, username: current_user.username, full_name: current_user.name, photo: current_user.photo)
         if @post.save
           format.html { redirect_to :sent }
         else

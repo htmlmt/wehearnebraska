@@ -76,7 +76,7 @@
                                     </a>
                                 </h4>
                                 <p class="content--text">
-                                    <%= simple_format(tweet.text.encode) %>
+                                    <%= simple_format(auto_link(tweet.text.encode)) %>
                                 </p>
                                 <% if current_user %>
                                     <% if current_user.name == "Hear Nebraska" %>
