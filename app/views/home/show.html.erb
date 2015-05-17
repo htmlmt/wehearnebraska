@@ -26,7 +26,7 @@
                         <% if current_user %>
                             <div class="question--input">
                                 <%= f.text_field :band, :placeholder => "@BandHandle", :value => "#{@band}", :class => "input--band" %>
-                                <%= f.text_field :message, :placeholder => "Play a Nebraska show because...", :value => "#{@message}", :class => "input--message" %>
+                                <%= f.text_field :message, :placeholder => "Please play Nebraska because...", :value => "#{@message}", :class => "input--message" %>
                                 <span class="question--characters-left">79</span>
                             </div>
                         <% else %>

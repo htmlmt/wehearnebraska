@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if current_user
         twitter_params[:message][0] = twitter_params[:message][0].downcase
-        message = '.' + twitter_params[:band] + ' Play a Nebraska show because ' + twitter_params[:message] + ' Visit: tournebraska.org'
+        message = '.' + twitter_params[:band] + ' Please play Nebraska because ' + twitter_params[:message] + ' Visit: tournebraska.org'
         begin
           current_user.tweet(message)
         rescue
@@ -24,7 +24,7 @@ class TweetsController < ApplicationController
       end
     end
   end
- 
+  
   def twitter_params
     params.require(:tweet).permit(:message, :band)
   end
