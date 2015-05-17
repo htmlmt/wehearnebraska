@@ -14,7 +14,7 @@ $(document).ready(function() {
   
     $('.tweet_out').click(function () {
         $('input[name="tweet[message]"]').map(function () {
-            $(this).val($(this).val() + $(this).attr('tag'));
+            $(this).val('.' + $(this).val() + $(this).attr('tag'));
         });
     });
 });
