@@ -233,5 +233,7 @@
 @include retina {
     .container--header {
         background: url('photos_2x.jpg') #000;
+        background-size: 500%;
+        background-repeat: no-repeat;
     }
 }

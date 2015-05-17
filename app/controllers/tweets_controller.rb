@@ -6,12 +6,17 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if current_user
         message = twitter_params[:band] + ' ' + twitter_params[:message]
-        current_user.tweet(message)
+        begin
+          current_user.tweet(message)
+        rescue
+          flash[:notice] = "Your tweet could not be sent. Was it too long perhaps? Please try again."
+          format.html { redirect_to :root }
+        end
         @post = Post.new(text: message, username: current_user.username, full_name: current_user.name, photo: current_user.photo)
         if @post.save
           format.html { redirect_to :sent }
         else
-          format.html { redirect_to :show}
+          format.html { redirect_to :root }
         end
       else
         format.html { redirect_to :sent }
