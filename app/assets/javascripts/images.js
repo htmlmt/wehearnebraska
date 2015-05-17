@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var photoInterval = setInterval(changePhoto, 4000);
+    var photoInterval = setInterval(changePhoto, 8000);
     var photoPositionArray = [0, 25, 50, 75, 100]
     var photoIndex = 1;
     function changePhoto() {
