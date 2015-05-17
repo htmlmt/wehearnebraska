@@ -25,6 +25,17 @@
                             DONATE TO HN
                         </div>
                     </a>
+                    <% if current_user %>
+                    <div class="sent--login-status">
+                        <div class="login-status--status">
+                            <em>You are logged in as <%= current_user.name %>. 
+                                <a href="/signout">
+                                    Click here to logout.
+                                </a>
+                            </em>
+                        </div>
+                    </div>
+                    <% end %>
                 </div>
             </header>
             <div class="container--login-status">

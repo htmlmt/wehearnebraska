@@ -37,21 +37,23 @@
                             <%= link_to "SIGN IN", "/auth/twitter", id: "sign-in" %>
                         <% end %>
                     <% end %>
+                    <% if current_user %>
+                    <div class="question--login-status">
+                        <div class="login-status--status">
+                            <em>You are logged in as <%= current_user.name %>. 
+                                <a href="/signout">
+                                    Click here to logout.
+                                </a>
+                            </em>
+                        </div>
+                    </div>
+                    <% end %>
                 </div>
             </header>
-            <div class="container--login-status">
-                <div class="login-status--credit">
+            <div class="container--photo-credit">
+                <div class="photo-credit--credit">
                     <em>photo of <a href="http://hearnebraska.org/feature/avett-brothers-pershing-center-photo-slideshow/" target="_blank">The Avett Brothers</a> by Matthew Masin</em>
                 </div>
-                <% if current_user %>
-                <div class="login-status--status">
-                    <em>You are logged in as <%= current_user.name %>. 
-                        <a href="/signout">
-                            Click here to logout.
-                        </a>
-                    </em>
-                </div>
-                <% end %>
             </div>
             <main class="container--tweets">
                 <% if @tweets.count != 0 %>

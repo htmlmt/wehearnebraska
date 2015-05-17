@@ -5,7 +5,7 @@ $(document).ready(function() {
     var photoIndex = 1;
     function changePhoto() {
         $('.container--header').css('background-position', '' + photoPositionArray[photoIndex] + '% 0%');
-        $('.login-status--credit').html("<em>" + photoCredits[photoIndex] + "</em>");
+        $('.photo-credit--credit').html("<em>" + photoCredits[photoIndex] + "</em>");
         if (photoIndex < 4) {
             photoIndex++
         } else {
