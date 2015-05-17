@@ -45,11 +45,12 @@
 
 .content--handle div em {
     font-family: "adobe-caslon-pro";
+    text-decoration: underline;
 }
 
 .content--handle div em:hover {
     font-family: "adobe-caslon-pro";
-    text-decoration: underline;
+    color: $siteBrown;
 }
 
 .container--tweets-header {

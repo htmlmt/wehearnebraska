@@ -20,7 +20,7 @@
                             TWEET AGAIN
                         </div>
                     </a>
-                    <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944">
+                    <a href="https://www.omahagives24.org/index.php?section=organizations&action=newDonation&fwID=944" target="_blank">
                         <div class="sent--button">
                             DONATE TO HN
                         </div>
@@ -29,14 +29,16 @@
             </header>
             <div class="container--login-status">
                 <div class="login-status--credit">
-                    <em>photo of The Avett Brothers by Matthew Masin</em>
-                </div> | 
+                    <em>photo of <a href="http://hearnebraska.org/feature/avett-brothers-pershing-center-photo-slideshow/" target="_blank">The Avett Brothers</a> by Matthew Masin</em>
+                </div>
                 <% if current_user %>
-                <em>You are logged in as <%= current_user.name %>. 
-                    <a href="/signout">
-                        Click here to logout.
-                    </a>
-                </em>
+                <div class="login-status--status">
+                    <em>You are logged in as <%= current_user.name %>. 
+                        <a href="/signout">
+                            Click here to logout.
+                        </a>
+                    </em>
+                </div>
                 <% end %>
             </div>
             <main class="container--tweets">

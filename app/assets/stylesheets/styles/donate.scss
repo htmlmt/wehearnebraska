@@ -2,11 +2,13 @@
     background-color: $white;
     text-align: center;
     padding: 2.5%;
-}
-
-.donate--call-to-action {
+    text-decoration: none;
     color: $siteOrange;
     font-size: (20rem/16);
+}
+
+.container--donate a {
+    text-decoration: none;
 }
 
 .donate--logo {

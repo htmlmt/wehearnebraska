@@ -58,6 +58,7 @@
 .question--sign-in-message a {
     font-size: 1rem;
     color: $midGrey;
+    text-decoration: none;
 }
 
 .question--sign-in-message a:hover {
@@ -75,6 +76,7 @@
     max-width: 225px;
     margin: 0 auto;
     text-align: center;
+    text-decoration: none;
 }
 
 #submit {
@@ -133,6 +135,10 @@
 }
 
 .container--login-status a:hover {
+    color: $siteDarkBlue;
+}
+
+.container--login-status a:hover {
     text-decoration: underline;
 }
 
@@ -140,6 +146,10 @@
     margin: 0 auto;
     width: 90%;
     padding-top: 0.5%;
+}
+
+.header--sent a {
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 600px) {

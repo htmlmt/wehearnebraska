@@ -10,6 +10,10 @@ form {
     font-size: 0;
 }
 
+a {
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: $smallTabletBreakpoint) {
     .body--background {
         padding: 25px;
