@@ -7,7 +7,7 @@ $(document).ready(function() {
         if (photoIndex <= 4) {
             photoIndex++
         } else {
-            photoIndex = 1;
+            clearInterval(photoInterval);
         }
     }
 });
