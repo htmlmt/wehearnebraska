@@ -228,3 +228,9 @@
         margin-top: 0;
     }
 }
+
+@include retina {
+    .container--header {
+        background: url('photos_2x.jpg') #000;
+    }
+}
