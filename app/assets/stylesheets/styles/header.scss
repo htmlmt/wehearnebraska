@@ -107,10 +107,19 @@
 }
 
 .container--login-status {
-    padding: 1% 2.5%;
+    padding: 0 2.5%;
     font-size: 1rem;
     background-color: $white;
     text-align: center;
+}
+
+.login-status--credit {
+    padding: 1% 0;
+}
+
+.login-status--status {
+    border-top: 1px solid #e6e7e8;
+    padding: 1% 0;
 }
 
 .container--login-status em {

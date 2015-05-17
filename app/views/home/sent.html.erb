@@ -27,6 +27,18 @@
                     </a>
                 </div>
             </header>
+            <div class="container--login-status">
+                <div class="login-status--credit">
+                    <em>photo of The Avett Brothers by Matthew Masin</em>
+                </div> | 
+                <% if current_user %>
+                <em>You are logged in as <%= current_user.name %>. 
+                    <a href="/signout">
+                        Click here to logout.
+                    </a>
+                </em>
+                <% end %>
+            </div>
             <main class="container--tweets">
                 <% if @tweets.count != 0 %>
                     <% @tweets.each do |tweet| %>
