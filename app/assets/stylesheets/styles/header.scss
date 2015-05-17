@@ -1,5 +1,5 @@
 .container--header {
-    background: url('photos.jpg') #000;
+    background: url('photos-mobile.jpg') #000;
     background-size: 500%;
     background-repeat: no-repeat;
     padding-top: 52.5%;
@@ -170,6 +170,14 @@
     color: $white;
 }
 
+@media only screen and (min-width: $smallTabletBreakpoint) {
+    .container--header {
+        background-size: 500%;
+        background-repeat: no-repeat;
+        background: url('photos.jpg') #000;
+    }
+}
+
 @media only screen and (min-width: 600px) {
     .header--question h1, .header--sent h1 {
         color: $white;
@@ -230,9 +238,30 @@
     }
 }
 
-@include retina {
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
     .container--header {
         background: url('photos_2x.jpg') #000;
+        background-size: 500%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media
+only screen and (min-width: $smallTabletBreakpoint),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .container--header {
+        background: url('photos-mobile_2x.jpg') #000;
         background-size: 500%;
         background-repeat: no-repeat;
     }

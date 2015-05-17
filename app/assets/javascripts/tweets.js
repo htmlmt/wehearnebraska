@@ -3,7 +3,7 @@ $(document).ready(function() {
         var band = document.getElementById('tweet_band');
         var message = document.getElementById('tweet_message');
         var chars = document.getElementsByClassName('question--characters-left')[0];
-        var total = 75;
+        var total = 76;
         band.onkeyup = function() {
             chars.innerHTML = (total - band.value.length - message.value.length);
         }
