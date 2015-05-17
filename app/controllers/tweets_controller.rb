@@ -5,7 +5,8 @@ class TweetsController < ApplicationController
   def create
     respond_to do |format|
       if current_user
-        message = twitter_params[:band] + ' ' + twitter_params[:message]
+        twitter_params[:message][0] = twitter_params[:message][0].downcase
+        message = '.' + twitter_params[:band] + ' Play a Nebraska show because ' + twitter_params[:message] + ' Visit: tournebraska.org'
         begin
           current_user.tweet(message)
         rescue
