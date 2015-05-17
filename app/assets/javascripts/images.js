@@ -4,13 +4,13 @@ $(document).ready(function() {
     var photoIndex = 1;
     function changePhoto() {
         $('.container--header').css('background-position', '' + photoPositionArray[photoIndex] + '% 0%')
-        if (photoIndex <= 4) {
+        if (photoIndex < 4) {
             photoIndex++
         } else {
             abortTimer();
         }
     }
     function abortTimer() {
-      clearInterval(photoInterval);
+        clearInterval(photoInterval);
     }
 });
