@@ -7,7 +7,10 @@ $(document).ready(function() {
         if (photoIndex <= 4) {
             photoIndex++
         } else {
-            clearInterval(photoInterval);
+            abortTimer();
         }
+    }
+    function abortTimer() {
+      clearInterval(photoInterval);
     }
 });
