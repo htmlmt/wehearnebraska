@@ -64,7 +64,7 @@
                         <div class="tweets--tweet">
                             <div class="tweet--profile-image">
                                 <a href="http://twitter.com/<%= tweet.username %>" target="_blank">
-                                    <img src="<%= tweet.photo %>" width="20px" alt="profile_image"/>
+                                    <img src="<%= $twitter.user(tweet.username).profile_image_uri(size = :bigger) %>" width="20px" alt="profile_image"/>
                                 </a>
                             </div>
                             <div class="tweet--content">
