@@ -73,6 +73,10 @@
     color: $siteOrange;
 }
 
+.tweet--content a:hover {
+    color: $siteBrown;
+}
+
 @media screen and (min-width: 700px) {
     .container--tweets {
         -moz-column-count: 2;
